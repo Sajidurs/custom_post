@@ -57,7 +57,7 @@ function twentytwenty_theme_support() {
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails', array('post', 'events'));
 
 	// Set post thumbnail size.
 	set_post_thumbnail_size( 1200, 9999 );
@@ -84,7 +84,6 @@ function twentytwenty_theme_support() {
 			'flex-width'  => true,
 		)
 	);
-
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -154,6 +153,7 @@ add_action( 'after_setup_theme', 'twentytwenty_theme_support' );
  * Include required files.
  */
 require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/events.php';
 
 // Handle SVG icons.
 require get_template_directory() . '/classes/class-twentytwenty-svg-icons.php';
@@ -584,7 +584,7 @@ function twentytwenty_block_editor_settings() {
 		)
 	);
 
-	add_theme_support( 'editor-styles' );
+	add_theme_support( 'editor-styles',  );
 
 	// If we have a dark background color then add support for dark editor style.
 	// We can determine if the background color is dark by checking if the text-color is white.

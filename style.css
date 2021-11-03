@@ -6313,6 +6313,14 @@ a.to-the-top > * {
 
 }
 
+
+/* Extra CSS */
+.events_wrapper .card {
+    box-shadow: 9px 13px 16px 8px #d3d3d3;
+    border: 1px solid#e3e3e3;
+    border-radius: 10px;
+}
+
 @media ( min-width: 1240px ) {
 
 
