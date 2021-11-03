@@ -6320,6 +6320,25 @@ a.to-the-top > * {
     border: 1px solid#e3e3e3;
     border-radius: 10px;
 }
+.events_single_wrapper .cards {
+    max-width: 500px;
+    margin: auto;
+    display: block;
+    background: #ededed;
+    box-shadow: 1px 2px 20px 11px #ddd;
+}
+.events_single_wrapper .cards h3 {
+    font-size: 20px;
+    font-family: serif;
+    margin-top: 22px;
+}
+.events_single_wrapper .cards p {
+    font-size: 14px;
+	font-family: serif;
+	padding: 8px;
+}
+
+
 
 @media ( min-width: 1240px ) {
 

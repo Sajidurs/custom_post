@@ -106,6 +106,7 @@ get_header();
 		</div><!-- .no-search-results -->
 
 		<?php
+		 wp_reset_query();
 	}
 	?>
 

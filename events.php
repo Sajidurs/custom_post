@@ -16,30 +16,35 @@ get_header();
                 <?php
                     $args = array(
                         'post_type' => 'events',
-                        'posts_per_page' => 3,
+                        'posts_per_page' => 6,
                     );
 
-                    $custom_posts_event = new WP_Query( $args );
+                    $custom_posts_event = new WP_Query($args);
                     while($custom_posts_event->have_posts()){
+                        $custom_posts_event->the_post();
                         ?>
 
                 <div class="col-md-3">
                     <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
+                        <?php the_post_thumbnail();?>
                             <div class="meta">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <h4>Dhaka</h4>
+                                        <h4>
+                                            <?php the_field('location');?>
+                                        </h4>
                                     </div>
                                     <div class="col-md-6">
-                                        <h4>Dhaka</h4>
+                                        <h4>
+                                        <?php the_field('date');?>
+                                        </h4>
                                     </div>
                                 </div>
                             </div>
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <h2 class="card-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                            <p class="card-text"><?php the_excerpt();?></p>
+                            <a href="#" class="btn btn-primary"><?php _e( "Go", "twentytwenty");?></a>
                         </div>
                     </div>
                 </div>
