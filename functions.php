@@ -193,6 +193,7 @@ function twentytwenty_register_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	wp_enqueue_style( 'twentytwenty-style', get_stylesheet_uri(), array(), $theme_version );
+	wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
 	wp_style_add_data( 'twentytwenty-style', 'rtl', 'replace' );
 
 	// Add output of Customizer settings as inline style.
@@ -218,6 +219,7 @@ function twentytwenty_register_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js');
 	wp_enqueue_script( 'twentytwenty-js', get_template_directory_uri() . '/assets/js/index.js', array(), $theme_version, false );
 	wp_script_add_data( 'twentytwenty-js', 'async', true );
 
