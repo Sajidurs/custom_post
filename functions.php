@@ -788,3 +788,29 @@ function twentytwenty_get_elements_array() {
 	 */
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
 }
+
+/**
+ *	ACF Admin Columns
+ *
+ */
+
+function add_acf_columns ( $columns ) {
+	return array_merge ( $columns, array ( 
+	  'location' => __ ( 'Location' ),
+	  'event_date' => __ ( 'Event Date' ),
+	) );
+  }
+  add_filter ( 'manage_events_posts_columns', 'add_acf_columns' );
+
+
+ function hosting_custom_column ( $column, $post_id ) {
+   switch ( $column ) {
+     case 'location':
+       echo get_post_meta ( $post_id, 'location', true );
+       break;
+     case 'event_date':
+       echo get_post_meta ( $post_id, 'event_date', true );
+       break;
+   }
+}
+add_action ( 'manage_events_posts_custom_column', 'hosting_custom_column', 10, 2 );

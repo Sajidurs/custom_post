@@ -32,7 +32,6 @@ function events_custom_post() {
         'description'        => 'Event custom post type.',
         'public'             => true,
         'publicly_queryable' => true,
-        'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
         'rewrite'            => array( 'slug' => 'event' ),
@@ -48,4 +47,21 @@ function events_custom_post() {
     register_post_type( 'events', $args );
 }
 add_action( 'init', 'events_custom_post' );
+
+// /**
+//  * Register a 'genre' taxonomy for post type 'book'.
+//  *
+//  * Register custom capabilities for taxonomies.
+//  *
+//  * @see register_post_type for registering post types.
+//  */
+// function events_taxonomy() {
+//     register_taxonomy( 'ecent_category', 'events', array(
+//         'label'        => __( 'Genre', 'twentytwenty' ),
+//         'rewrite'      => array( 'slug' => 'event-category' ),
+//         'hierarchical' => true,
+//         'public'       => true,
+//     ) );
+// }
+// add_action( 'init', 'events_taxonomy');
 
